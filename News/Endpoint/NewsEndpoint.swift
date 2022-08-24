@@ -15,24 +15,42 @@ protocol APIBuilder {
 
 enum NewsAPI {
     case getNews
+    case getScienceNews
+    case getSportNews
+    case getHealthNews
+    case getBusinessNews
+    case getEntertainmentNews
+    case getTechnologyNews
 }
 
 extension NewsAPI: APIBuilder {
     
     var urlRequest: URLRequest {
 //        return URLRequest(url: self.baseURL.appendingPathComponent(self.apiKey))
-        return URLRequest(url: self.baseURL.appendingPathExtension(self.apiKey))
+        return URLRequest(url: self.baseURL)
     }
     
     var baseURL: URL {
         switch self {
         case .getNews:
-            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=52995fcfaa124a7491780d889a25ca13")!
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+        case .getScienceNews:
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+        case .getSportNews:
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+        case .getBusinessNews:
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+        case .getHealthNews:
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+        case .getEntertainmentNews:
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+        case .getTechnologyNews:
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=&category=technology&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
         }
     }
     
     var apiKey: String {
-        return "52995fcfaa124a7491780d889a25ca13"
+        return "8631663fe2b14af68b2a07fc89cbafce"
     }
     
     

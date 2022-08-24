@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol NewsViewModel {
-    func getArticles()
+    func getArticles(category: NewsAPI)
 }
 
 class NewsViewModelImpl: ObservableObject, NewsViewModel {
@@ -25,12 +25,12 @@ class NewsViewModelImpl: ObservableObject, NewsViewModel {
         self.service = service
     }
     
-    func getArticles() {
+    func getArticles(category: NewsAPI) {
         
         self.state = .loading
         
         let cancellable = service
-            .request(from: .getNews)
+            .request(from: category)
             .sink { res in
                 switch res {
                     
