@@ -9,6 +9,8 @@ import SwiftUI
 
 struct NewsView: View {
     
+    @State private var isShowingArticleContentView = false
+    
     @StateObject var viewModel = NewsViewModelImpl(service: NewsServiceImpl())
     
     var body: some View {
@@ -23,7 +25,13 @@ struct NewsView: View {
             case .success(let articles):
                 NavigationView {
                     List(articles) { item in
+                        
+                        NavigationLink(destination: ArticleContentView(article: item), isActive: $isShowingArticleContentView) { EmptyView() }
+                        
                         ArticleView(article: item)
+                            .onTapGesture {
+                                isShowingArticleContentView = true
+                            }
                     }
                     .navigationTitle(Text("News"))
                 }

@@ -20,13 +20,14 @@ enum NewsAPI {
 extension NewsAPI: APIBuilder {
     
     var urlRequest: URLRequest {
-        return URLRequest(url: self.baseURL.appendingPathComponent(self.apiKey))
+//        return URLRequest(url: self.baseURL.appendingPathComponent(self.apiKey))
+        return URLRequest(url: self.baseURL.appendingPathExtension(self.apiKey))
     }
     
     var baseURL: URL {
         switch self {
         case .getNews:
-            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=")!
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=52995fcfaa124a7491780d889a25ca13")!
         }
     }
     

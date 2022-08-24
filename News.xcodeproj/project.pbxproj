@@ -24,6 +24,7 @@
 		FA24296728B50F28003BB57C /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = FA24296628B50F28003BB57C /* URLImageStore */; };
 		FA24296928B50F9D003BB57C /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24296828B50F9D003BB57C /* ArticleView.swift */; };
 		FA24296B28B55198003BB57C /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24296A28B55198003BB57C /* ErrorView.swift */; };
+		FA24296D28B56554003BB57C /* ArticleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24296C28B56554003BB57C /* ArticleContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		FA24296128B50C6F003BB57C /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		FA24296828B50F9D003BB57C /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		FA24296A28B55198003BB57C /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		FA24296C28B56554003BB57C /* ArticleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				FA24294F28B50596003BB57C /* NewsView.swift */,
 				FA24296828B50F9D003BB57C /* ArticleView.swift */,
 				FA24296A28B55198003BB57C /* ErrorView.swift */,
+				FA24296C28B56554003BB57C /* ArticleContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				FA24295628B506C1003BB57C /* NewsEndpoint.swift in Sources */,
 				FA24296928B50F9D003BB57C /* ArticleView.swift in Sources */,
 				FA24296228B50C6F003BB57C /* NewsViewModel.swift in Sources */,
+				FA24296D28B56554003BB57C /* ArticleContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
