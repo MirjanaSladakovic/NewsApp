@@ -10,10 +10,13 @@ import SwiftUI
 struct NewsView: View {
     
     @State private var isShowingArticleContentView = false
+    @State private var isShowingSearchView = false
     
     @StateObject var viewModel = NewsViewModelImpl(service: NewsServiceImpl())
     
     var body: some View {
+        
+        NavigationLink(destination: SearchView(), isActive: $isShowingSearchView) { EmptyView() }
                 
         Group {
             
@@ -24,6 +27,7 @@ struct NewsView: View {
             case .failed(let error):
                 ErrorView(error: error, handler: { viewModel.getArticles(category: .getNews) } )
             case .success(let articles):
+                
                 NavigationView {
                     List(articles) { item in
                         
@@ -31,12 +35,23 @@ struct NewsView: View {
                         
                         ArticleView(article: item)
                             .onTapGesture {
-                                isShowingArticleContentView = true
+                                
+                                if((item.content?.isEmpty) != nil) {
+                                    if let url = URL(string: item.url ?? "") {
+                                           UIApplication.shared.open(url)
+                                        }
+                                } else {
+                                    isShowingArticleContentView = true
+                                }
+                                
                             }
                     }
                     .navigationTitle(Text("News"))
                     .navigationBarItems(trailing: {
                         Menu {
+                            Button(action: { isShowingSearchView = true }) {
+                                Label("Search", systemImage: "")
+                            }
                             Button(action: { viewModel.getArticles(category: .getScienceNews) }) {
                                 Label("Science", systemImage: "")
                             }

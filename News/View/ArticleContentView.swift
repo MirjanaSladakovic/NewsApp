@@ -41,6 +41,9 @@ struct ArticleContentView: View {
                     Text(article.source?.name ?? "")
                         .font(.subheadline)
                         .foregroundColor(Color.gray)
+                    Text(article.url ?? "")
+                        .font(.body)
+                        .foregroundColor(Color.blue)
                 }
                 
                 Spacer()

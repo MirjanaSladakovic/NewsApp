@@ -33,19 +33,19 @@ extension NewsAPI: APIBuilder {
     var baseURL: URL {
         switch self {
         case .getNews:
-            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=general&sortBy=publishedAt&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
         case .getScienceNews:
-            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=science&sortBy=publishedAt&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
         case .getSportNews:
-            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=sports&sortBy=publishedAt&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
         case .getBusinessNews:
-            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=business&sortBy=publishedAt&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
         case .getHealthNews:
-            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=health&sortBy=publishedAt&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
         case .getEntertainmentNews:
-            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=entertainment&sortBy=publishedAt&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
         case .getTechnologyNews:
-            return URL(string: "https://newsapi.org/v2/top-headlines?country=&category=technology&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
+            return URL(string: "https://newsapi.org/v2/top-headlines?country=&category=technology&sortBy=publishedAt&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
         }
     }
     
