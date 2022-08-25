@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FASwiftUI
 
 struct NewsView: View {
     
@@ -35,7 +36,7 @@ struct NewsView: View {
                         ArticleView(article: item)
                             .onTapGesture {
                                 
-                                if((item.content?.isEmpty) != nil) {
+                                if(item.content?.isEmpty == true) {
                                     if let url = URL(string: item.url ?? "") {
                                            UIApplication.shared.open(url)
                                         }

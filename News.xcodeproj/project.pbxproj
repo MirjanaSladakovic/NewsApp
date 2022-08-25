@@ -25,6 +25,11 @@
 		FA24296928B50F9D003BB57C /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24296828B50F9D003BB57C /* ArticleView.swift */; };
 		FA24296B28B55198003BB57C /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24296A28B55198003BB57C /* ErrorView.swift */; };
 		FA24296D28B56554003BB57C /* ArticleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24296C28B56554003BB57C /* ArticleContentView.swift */; };
+		FA46F46128B79CE90075FE19 /* FASwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FA46F46028B79CE90075FE19 /* FASwiftUI */; };
+		FA46F46A28B7A9D40075FE19 /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA46F46728B7A9D40075FE19 /* Font Awesome 5 Brands-Regular-400.otf */; };
+		FA46F46B28B7A9D40075FE19 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA46F46828B7A9D40075FE19 /* Font Awesome 5 Free-Regular-400.otf */; };
+		FA46F46C28B7A9D40075FE19 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA46F46928B7A9D40075FE19 /* Font Awesome 5 Free-Solid-900.otf */; };
+		FA46F46E28B7AA060075FE19 /* icons.json in Resources */ = {isa = PBXBuildFile; fileRef = FA46F46D28B7AA060075FE19 /* icons.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,11 @@
 		FA24296828B50F9D003BB57C /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		FA24296A28B55198003BB57C /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		FA24296C28B56554003BB57C /* ArticleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentView.swift; sourceTree = "<group>"; };
+		FA46F45E28B797470075FE19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FA46F46728B7A9D40075FE19 /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
+		FA46F46828B7A9D40075FE19 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
+		FA46F46928B7A9D40075FE19 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		FA46F46D28B7AA060075FE19 /* icons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = icons.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,7 @@
 			files = (
 				FA24296728B50F28003BB57C /* URLImageStore in Frameworks */,
 				FA24296528B50F28003BB57C /* URLImage in Frameworks */,
+				FA46F46128B79CE90075FE19 /* FASwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +127,8 @@
 		FA24292328B50529003BB57C /* News */ = {
 			isa = PBXGroup;
 			children = (
+				FA46F45E28B797470075FE19 /* Info.plist */,
+				FA46F45A28B795A80075FE19 /* Font Awesome */,
 				FA24296028B50C5E003BB57C /* ViewModel */,
 				FA24295D28B50BF8003BB57C /* State */,
 				FA24295A28B508FA003BB57C /* Service */,
@@ -214,6 +227,17 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FA46F45A28B795A80075FE19 /* Font Awesome */ = {
+			isa = PBXGroup;
+			children = (
+				FA46F46D28B7AA060075FE19 /* icons.json */,
+				FA46F46728B7A9D40075FE19 /* Font Awesome 5 Brands-Regular-400.otf */,
+				FA46F46828B7A9D40075FE19 /* Font Awesome 5 Free-Regular-400.otf */,
+				FA46F46928B7A9D40075FE19 /* Font Awesome 5 Free-Solid-900.otf */,
+			);
+			path = "Font Awesome";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,6 +257,7 @@
 			packageProductDependencies = (
 				FA24296428B50F28003BB57C /* URLImage */,
 				FA24296628B50F28003BB57C /* URLImageStore */,
+				FA46F46028B79CE90075FE19 /* FASwiftUI */,
 			);
 			productName = News;
 			productReference = FA24292128B50529003BB57C /* News.app */;
@@ -308,6 +333,7 @@
 			mainGroup = FA24291828B50528003BB57C;
 			packageReferences = (
 				FA24296328B50F28003BB57C /* XCRemoteSwiftPackageReference "url-image" */,
+				FA46F45F28B79CE90075FE19 /* XCRemoteSwiftPackageReference "FASwiftUI" */,
 			);
 			productRefGroup = FA24292228B50529003BB57C /* Products */;
 			projectDirPath = "";
@@ -325,7 +351,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA46F46E28B7AA060075FE19 /* icons.json in Resources */,
+				FA46F46C28B7A9D40075FE19 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
+				FA46F46B28B7A9D40075FE19 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				FA24292C28B5052A003BB57C /* Preview Assets.xcassets in Resources */,
+				FA46F46A28B7A9D40075FE19 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				FA24292928B5052A003BB57C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +552,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"News/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = News/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -550,6 +581,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"News/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = News/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -690,6 +722,14 @@
 				kind = branch;
 			};
 		};
+		FA46F45F28B79CE90075FE19 /* XCRemoteSwiftPackageReference "FASwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mattmaddux/FASwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -702,6 +742,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA24296328B50F28003BB57C /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImageStore;
+		};
+		FA46F46028B79CE90075FE19 /* FASwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA46F45F28B79CE90075FE19 /* XCRemoteSwiftPackageReference "FASwiftUI" */;
+			productName = FASwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

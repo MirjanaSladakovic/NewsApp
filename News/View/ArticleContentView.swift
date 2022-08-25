@@ -7,6 +7,7 @@
 
 import SwiftUI
 import URLImage
+import FASwiftUI
 
 struct ArticleContentView: View {
     
@@ -28,7 +29,6 @@ struct ArticleContentView: View {
                         .aspectRatio(contentMode: .fill)
                 })
                 .frame(maxWidth: .infinity, maxHeight: 300)
-                .cornerRadius(10)
                 
             } else {
                 PlaceholderImageView()
@@ -44,12 +44,24 @@ struct ArticleContentView: View {
                     Text(article.url ?? "")
                         .font(.body)
                         .foregroundColor(Color.blue)
+                    
+                    HStack {
+                        FAText(iconName: "facebook", size: 40)
+                            .foregroundColor(Color.blue)
+                        FAText(iconName: "instagram", size: 40)
+                            .foregroundColor(Color.yellow)
+                        FAText(iconName: "twitter", size: 40)
+                            .foregroundColor(Color.blue)
+                        FAText(iconName: "share", size: 40)
+                            .foregroundColor(Color.purple)
+                    } .padding(.top)
+                        
                 }
                 
                 Spacer()
-            }
-            .padding()
-            
+                
+            }.padding()
+                
             Text(article.content ?? "")
                 .font(.body)
                 .padding()
