@@ -14,7 +14,7 @@ struct ArticleContentView: View {
     let article: Article
     
     var body: some View {
-        VStack {
+        ScrollView {
             
             if let imgURL = article.urlToImage,
                let url = URL(string: imgURL) {
@@ -38,12 +38,13 @@ struct ArticleContentView: View {
                 VStack(alignment: .leading) {
                     Text(article.title ?? "")
                         .font(.title)
+                        .fixedSize(horizontal: false, vertical: true)
                     Text(article.source?.name ?? "")
                         .font(.subheadline)
                         .foregroundColor(Color.gray)
-                    Text(article.url ?? "")
-                        .font(.body)
-                        .foregroundColor(Color.blue)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Link(article.url ?? "",
+                         destination: URL(string: article.url ?? "")!)
                     
                     HStack {
                         FAText(iconName: "facebook", size: 40)
@@ -57,7 +58,7 @@ struct ArticleContentView: View {
                     } .padding(.top)
                         
                 }
-                
+            
                 Spacer()
                 
             }.padding()
@@ -65,8 +66,6 @@ struct ArticleContentView: View {
             Text(article.content ?? "")
                 .font(.body)
                 .padding()
-            
-            Spacer()
         }
     }
 }

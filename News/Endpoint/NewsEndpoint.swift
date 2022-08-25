@@ -10,7 +10,6 @@ import Foundation
 protocol APIBuilder {
     var urlRequest: URLRequest { get }
     var baseURL: URL { get }
-    var apiKey: String { get }
     
     func searchNews(searchKeyword: String) -> URLRequest
 }
@@ -28,8 +27,12 @@ enum NewsAPI {
 extension NewsAPI: APIBuilder {
     
     func searchNews(searchKeyword: String) -> URLRequest {
-        print(URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=general&sortBy=publishedAt&apiKey=8631663fe2b14af68b2a07fc89cbafce&q=" + searchKeyword)?.absoluteString)
-        return URLRequest(url: (URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=general&sortBy=publishedAt&apiKey=8631663fe2b14af68b2a07fc89cbafce&q=" + searchKeyword))!)
+                
+        if let testURL = URL(string: self.baseURL.absoluteString + "&q=" + searchKeyword) {
+            return URLRequest(url: testURL)
+        } else{
+            return URLRequest(url: self.baseURL)
+        }
     }
     
     var urlRequest: URLRequest {
@@ -54,10 +57,5 @@ extension NewsAPI: APIBuilder {
             return URL(string: "https://newsapi.org/v2/top-headlines?country=&category=technology&sortBy=publishedAt&apiKey=8631663fe2b14af68b2a07fc89cbafce")!
         }
     }
-    
-    var apiKey: String {
-        return "8631663fe2b14af68b2a07fc89cbafce"
-    }
-    
     
 }

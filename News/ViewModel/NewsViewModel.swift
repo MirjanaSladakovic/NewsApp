@@ -9,11 +9,12 @@ import Foundation
 import Combine
 
 protocol NewsViewModel {
-    func getArticles(category: NewsAPI)
+    func getArticles(categoryState: CategoryState)
+    func getSearchArticles(categoryState: CategoryState, keyword: String)
 }
 
 class NewsViewModelImpl: ObservableObject, NewsViewModel {
-    
+
     private let service: NewsService
     
     private(set) var articles = [Article]()
@@ -25,12 +26,12 @@ class NewsViewModelImpl: ObservableObject, NewsViewModel {
         self.service = service
     }
     
-    func getArticles(category: NewsAPI) {
+    func getArticles(categoryState: CategoryState) {
         
         self.state = .loading
         
         let cancellable = service
-            .request(from: category)
+            .request(from: getAPICategoryByState(state: categoryState))
             .sink { res in
                 switch res {
                     
@@ -46,12 +47,12 @@ class NewsViewModelImpl: ObservableObject, NewsViewModel {
         self.cancellable.insert(cancellable)
     }
     
-    func getSearchArticles(category: NewsAPI, keyword: String) {
+    func getSearchArticles(categoryState: CategoryState, keyword: String) {
         
         self.state = .loading
         
         let cancellable = service
-            .searchRequest(from: category, keyword: keyword)
+            .searchRequest(from: getAPICategoryByState(state: categoryState), keyword: keyword)
             .sink { res in
                 switch res {
                     
@@ -65,5 +66,25 @@ class NewsViewModelImpl: ObservableObject, NewsViewModel {
             }
         
         self.cancellable.insert(cancellable)
+    }
+    
+    func getAPICategoryByState(state: CategoryState) -> NewsAPI {
+        
+        switch state {
+        case .general:
+            return .getNews
+        case .science:
+            return .getScienceNews
+        case .sport:
+            return .getSportNews
+        case .health:
+            return .getHealthNews
+        case .business:
+            return .getBusinessNews
+        case .entertainment:
+            return .getEntertainmentNews
+        case .technology:
+            return .getTechnologyNews
+        }
     }
 }

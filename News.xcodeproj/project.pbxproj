@@ -30,6 +30,7 @@
 		FA46F46B28B7A9D40075FE19 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA46F46828B7A9D40075FE19 /* Font Awesome 5 Free-Regular-400.otf */; };
 		FA46F46C28B7A9D40075FE19 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA46F46928B7A9D40075FE19 /* Font Awesome 5 Free-Solid-900.otf */; };
 		FA46F46E28B7AA060075FE19 /* icons.json in Resources */ = {isa = PBXBuildFile; fileRef = FA46F46D28B7AA060075FE19 /* icons.json */; };
+		FA46F47028B7E7280075FE19 /* CategoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46F46F28B7E7270075FE19 /* CategoryState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		FA46F46828B7A9D40075FE19 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		FA46F46928B7A9D40075FE19 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
 		FA46F46D28B7AA060075FE19 /* icons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = icons.json; sourceTree = "<group>"; };
+		FA46F46F28B7E7270075FE19 /* CategoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				FA24295E28B50C21003BB57C /* ResultState.swift */,
+				FA46F46F28B7E7270075FE19 /* CategoryState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				FA24295928B50819003BB57C /* APIError.swift in Sources */,
 				FA24295628B506C1003BB57C /* NewsEndpoint.swift in Sources */,
 				FA24296928B50F9D003BB57C /* ArticleView.swift in Sources */,
+				FA46F47028B7E7280075FE19 /* CategoryState.swift in Sources */,
 				FA24296228B50C6F003BB57C /* NewsViewModel.swift in Sources */,
 				FA24296D28B56554003BB57C /* ArticleContentView.swift in Sources */,
 			);
