@@ -45,4 +45,25 @@ class NewsViewModelImpl: ObservableObject, NewsViewModel {
         
         self.cancellable.insert(cancellable)
     }
+    
+    func getSearchArticles(category: NewsAPI, keyword: String) {
+        
+        self.state = .loading
+        
+        let cancellable = service
+            .searchRequest(from: category, keyword: keyword)
+            .sink { res in
+                switch res {
+                    
+                case .finished:
+                    self.state = .success(content: self.articles)
+                case .failure(let error):
+                    self.state = .failed(error: error)
+                }
+            } receiveValue: { response in
+                self.articles = response.articles
+            }
+        
+        self.cancellable.insert(cancellable)
+    }
 }

@@ -10,14 +10,13 @@ import SwiftUI
 struct NewsView: View {
     
     @State private var isShowingArticleContentView = false
-    @State private var isShowingSearchView = false
+    
+    @State var searchQuery = ""
     
     @StateObject var viewModel = NewsViewModelImpl(service: NewsServiceImpl())
     
     var body: some View {
-        
-        NavigationLink(destination: SearchView(), isActive: $isShowingSearchView) { EmptyView() }
-                
+                        
         Group {
             
             switch viewModel.state {
@@ -46,12 +45,16 @@ struct NewsView: View {
                                 
                             }
                     }
+                    .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always))
+                    .onSubmit(of: .search) { viewModel.getSearchArticles(category: .getNews, keyword: self.searchQuery) }
+                    .onChange(of: searchQuery) { value in
+                        if searchQuery.isEmpty{
+                            viewModel.getArticles(category: .getNews)
+                        }
+                    }
                     .navigationTitle(Text("News"))
                     .navigationBarItems(trailing: {
                         Menu {
-                            Button(action: { isShowingSearchView = true }) {
-                                Label("Search", systemImage: "")
-                            }
                             Button(action: { viewModel.getArticles(category: .getScienceNews) }) {
                                 Label("Science", systemImage: "")
                             }

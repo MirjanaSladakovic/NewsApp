@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA1334C828B6C1C4000979ED /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1334C728B6C1C4000979ED /* SearchView.swift */; };
 		FA24292528B50529003BB57C /* NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24292428B50529003BB57C /* NewsApp.swift */; };
 		FA24292928B5052A003BB57C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA24292828B5052A003BB57C /* Assets.xcassets */; };
 		FA24292C28B5052A003BB57C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA24292B28B5052A003BB57C /* Preview Assets.xcassets */; };
@@ -46,7 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA1334C728B6C1C4000979ED /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FA24292128B50529003BB57C /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA24292428B50529003BB57C /* NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApp.swift; sourceTree = "<group>"; };
 		FA24292828B5052A003BB57C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				FA24296828B50F9D003BB57C /* ArticleView.swift */,
 				FA24296A28B55198003BB57C /* ErrorView.swift */,
 				FA24296C28B56554003BB57C /* ArticleContentView.swift */,
-				FA1334C728B6C1C4000979ED /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -358,7 +355,6 @@
 				FA24295C28B50907003BB57C /* NewsService.swift in Sources */,
 				FA24295028B50596003BB57C /* NewsView.swift in Sources */,
 				FA24292528B50529003BB57C /* NewsApp.swift in Sources */,
-				FA1334C828B6C1C4000979ED /* SearchView.swift in Sources */,
 				FA24295328B5064D003BB57C /* NewsResponse.swift in Sources */,
 				FA24296B28B55198003BB57C /* ErrorView.swift in Sources */,
 				FA24295928B50819003BB57C /* APIError.swift in Sources */,
